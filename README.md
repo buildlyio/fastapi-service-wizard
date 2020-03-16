@@ -14,16 +14,18 @@ These instructions will get you a copy of the project up and running on your loc
 
 Build first the image:
 
-```bash
-docker-compose build # --no-cache to force dependencies installation
-```
-
-To run the webserver (go to 127.0.0.1:8080):
+* Go to the project directory (in where your `Dockerfile` is, containing your `app` directory).
+* Build your FastAPI image:
 
 ```bash
-docker-compose up # -d for detached
+docker build -t myimage .
 ```
 
+* Run a container based on your image:
+
+```bash
+docker run -d --name mycontainer -p 80:80 myimage
+```
 
 ## Running the tests
 
